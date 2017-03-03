@@ -1,0 +1,66 @@
+<div class="container"ng-controller="reviewController">
+    <br><br>
+    <br><br>
+
+    <table class="table" >
+        <thead>
+            <th style="width:1%">
+                Restaurant Name
+            </th>
+
+            <th style="width:1%" ng-click="revC.sortType = 'fRating'; revC.sortReverse = !revC.sortReverse">
+                <span ng-show="revC.sortType == 'fRating'&& !revC.sortReverse" class="fa fa-caret-down"> </span>
+                <span ng-show="revC.sortType == 'fRating' && revC.sortReverse" class="fa fa-caret-up"></span>
+                Food Rating:
+            </th>
+
+            <th style="width:1%" ng-click="revC.sortType = 'reqRating'; revC.sortReverse = !revC.sortReverse">
+                <span ng-show="revC.sortType == 'reqRating'&& !revC.sortReverse" class="fa fa-caret-down"> </span>
+                <span ng-show="revC.sortType == 'reqRating' && revC.sortReverse" class="fa fa-caret-up"></span>
+                Service Rating:
+            </th>
+
+            <th style="width:1%" ng-click="revC.sortType = 'cRating'; revC.sortReverse = !revC.sortReverse">
+                <span ng-show="revC.sortType == 'cRating'&& !revC.sortReverse" class="fa fa-caret-down"> </span>
+                <span ng-show="revC.sortType == 'cRating' && revC.sortReverse" class="fa fa-caret-up"></span>
+                Cleanliness Rating:
+            </th>
+
+
+            <th style="width:20%">
+                Review:
+            </th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="rev in revC.review |
+ pagination: revC.current * revC.reviewPerPage | limitTo: revC.reviewPerPage | orderBy:revC.sortType:revC.sortReverse">
+            <td>  {{rev.Title}}</td>
+            <td> {{rev.fRating}} </td>
+            <td> {{rev.reqRating}} </td>
+            <td> {{rev.cRating}} </td>
+            <td> {{rev.body}} </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+    <div class="pagination pagination-centered" ng-show="revC.length">
+        <ul class="pagination-controle pagination">
+            <li>
+                <button type="button" class="btn btn-primary" ng-disabled="revC.current == 0"
+                        ng-click="revC.current=revC.current-1"> &lt; PREV</button>
+            </li>
+            <li>
+                <span>Page {{revC.current + 1}} of {{ revC.numberOfPages() }}</span>
+            </li>
+            <li>
+                <button type="button" class="btn btn-primary"
+                        ng-disabled="revC.current >= revC.length/revC.reviewPerPage - 1"
+                        ng-click="revC.current = revC.current+1">NEXT &gt;</button>
+            </li>
+        </ul>
+    </div>
+
+
+
+</div>

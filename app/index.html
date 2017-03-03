@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="ngApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Review App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+  <script src="https://code.jquery.com/jquery-1.4.1.min.js"></script>
+
+
+
+  <link rel="stylesheet" href="app.css">
+  <script src="routing.js"></script>
+  <script src="controller/NewReviewController.js"></script>
+  <script src="service/reviewService.service.client.js"></script>
+  <script src="controller/AllReviewController.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <div id="navbar" class="collapse navbar-collapse">
+        <a class="navbar-brand" href="#/new">Write a review</a>
+      </div>
+    </div>
+  </div>
+
+</nav>
+  <div class="container" ng-view>
+
+
+  </div>
+</body>
+</html>
