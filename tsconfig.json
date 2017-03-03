@@ -1,0 +1,18 @@
+{
+  "name": "Review-Management",
+  "version": "1.0.0",
+  "description": "SMITH Review Management",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.4.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Suhas Kabinna"
+}
